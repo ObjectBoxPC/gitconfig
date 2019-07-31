@@ -1,0 +1,86 @@
+[alias]
+	a = add
+		aa = add -A #Add all changes (new, modified, deleted)
+		af = add -f #Force-add, disregarding .gitignore
+		ap = add -p #Add parts of files
+
+	b = branch
+		ba = branch -a
+		bd = branch -d
+		bdd = branch -D
+		bm = branch -m
+		#Although this is technically a different command, it makes some sense to group it under here
+		bn = checkout -b #New branch and checkout
+
+	c = commit
+		ca = commit --amend
+		car = commit --amend --reset-author #Used when the actual changes are amended, not just the message
+		#See also "ninja"
+		cf = commit --fixup
+		cm = commit -m
+
+	d = diff
+		#Although "difftool" is technically a different command, it makes some sense to group those aliases under here
+		dc = diff --cached #Changes to commit
+		dct = difftool --cached #Perhaps this should be "dtc" but it may be thought of it as "diff --cached with a tool"
+		dt = difftool
+
+	f = fetch
+		fp = fetch --prune
+
+	g = gui citool
+
+	gr = log --all --graph --oneline
+
+	h = checkout #Not "c" because that is taken by "commit"
+		hp = checkout -p #Revert parts of files
+
+	k = !gitk --branches --tags --remotes --date-order #Already a remembered view but this goes directly to it
+
+	l = log
+
+	m = merge
+		ma = merge --abort
+		mff = merge --ff-only #For dummy branches that should always follow master
+		mnoff = merge --no-ff #For feature branches when there is no divergence from master
+		ms = merge --squash #Probably won't be used very often
+
+	ninja = commit --amend --reset-author --no-edit #"Ninja edit," when you made a mistake and no one else needs to know
+
+	pi = cherry-pick
+		pia = cherry-pick --abort
+		pin = cherry-pick -n
+
+	pl = pull
+
+	ps = push
+		psd = push -d
+		psu = push -u
+
+	s = status
+		ss = status -s #Short format, machine-readable
+
+	sct = !~/Documents/git-sct.sh
+
+	t = stash push -m #Not bare "stash" to enforce always adding a message (plus avoids a conflict with "stash pop")
+		td = stash drop
+		tl = stash list
+		tp = stash pop
+
+	rb = rebase
+		rba = rebase --abort
+		rbc = rebase --continue
+		rbi = rebase -i
+
+	rl = reflog
+
+	rs = reset
+		rsh = reset --hard
+		rss = reset --soft
+[rebase]
+	missingCommitsCheck = error
+[merge]
+	conflictStyle = diff3
+[gui]
+	gcwarning = false
+	commitmsgwidth = 72
