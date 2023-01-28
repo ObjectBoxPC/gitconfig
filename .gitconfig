@@ -12,39 +12,38 @@
 		bn = checkout -b #New branch and checkout
 
 	c = commit
-		ca = commit --amend
-		car = commit --amend --reset-author #Used when the actual changes are amended, not just the message
-		#See also "ninja"
-		cf = commit --fixup
-		cm = commit -m
+		ca = commit --amend #Amend commit without resetting author information; may be used when only the message is amended
+		car = commit --amend --reset-author #Amend while resetting authorship information, for when the actual changes are amended; see also "ninja"
+		cf = commit --fixup #Commit with fixup message suitable for rebase with autosquash
+		cm = commit -m #Commit with message on command line
 
 	d = diff
+		dc = diff --cached #Show staged changes
 		#Although "difftool" is technically a different command, it makes some sense to group those aliases under here
-		dc = diff --cached #Changes to commit
 		dct = difftool --cached #Perhaps this should be "dtc" but it may be thought of it as "diff --cached with a tool"
 		dt = difftool
 
 	f = fetch
-		fp = fetch --prune
+		fp = fetch --prune #Prune remote-tracking branches deleted on remote
 
-	g = gui citool
+	g = gui citool #Make a single commit and exit, different from plain "git gui"
 
-	gr = log --all --graph --oneline
+	gr = log --all --graph --oneline #Show commit graph
 
 	h = checkout #Not "c" because that is taken by "commit"
 		hp = checkout -p #Revert parts of files
 
-	k = !gitk --branches --tags --remotes --date-order #Already a remembered view but this goes directly to it
+	k = !gitk --branches --tags --remotes --date-order #Personal preferences for gitk (already a remembered view but this goes directly to it)
 
 	l = log
 
 	m = merge
 		ma = merge --abort
-		mff = merge --ff-only #For dummy branches that should always follow master
-		mnoff = merge --no-ff #For feature branches when there is no divergence from master
+		mff = merge --ff-only
+		mnoff = merge --no-ff
 		ms = merge --squash #Probably won't be used very often
 
-	ninja = commit --amend --reset-author --no-edit #"Ninja edit," when you made a mistake and no one else needs to know
+	ninja = commit --amend --reset-author --no-edit #"Ninja edit," editing a commit that has not been pushed so that no one else can tell
 
 	pi = cherry-pick
 		pia = cherry-pick --abort
@@ -54,13 +53,13 @@
 		plr = pull --rebase
 
 	ps = push
-		psd = push -d
-		psu = push -u
+		psd = push -d #Delete remote branch
+		psu = push -u #Setup upstream tracking
 
 	s = status
 		ss = status -s #Short format, machine-readable
 
-	sct = !~/Documents/git-sct.sh
+	sct = !~/Documents/git-sct.sh #See https://gist.github.com/ObjectBoxPC/7c70e7657b42c542f0ba2cdf9145172b ; adjust path as needed
 
 	t = stash push -m #Not bare "stash" to enforce always adding a message (plus avoids a conflict with "stash pop")
 		td = stash drop
@@ -83,7 +82,7 @@
 [merge]
 	conflictStyle = diff3
 [gui]
-	gcwarning = false
+	gcwarning = false #Warning is often a hindrance; can run "gc" manually if performance is really a problem
 	commitmsgwidth = 72
 [init]
 	defaultBranch = main
