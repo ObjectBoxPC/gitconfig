@@ -1,7 +1,6 @@
 [alias]
 	a = add
 		aa = add -A #Add all changes (new, modified, deleted)
-		af = add -f #Force-add, disregarding .gitignore
 		ap = add -p #Add parts of files
 
 	b = branch
