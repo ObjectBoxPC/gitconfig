@@ -85,3 +85,5 @@
 [gui]
 	gcwarning = false
 	commitmsgwidth = 72
+[init]
+	defaultBranch = main
