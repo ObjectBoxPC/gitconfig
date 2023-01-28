@@ -76,13 +76,13 @@
 	rs = reset
 		rsh = reset --hard
 		rss = reset --soft
-[rebase]
-	autoSquash = true
-	missingCommitsCheck = error
-[merge]
-	conflictStyle = diff3
 [gui]
 	gcwarning = false #Warning is often a hindrance; can run "gc" manually if performance is really a problem
 	commitmsgwidth = 72
 [init]
 	defaultBranch = main
+[merge]
+	conflictStyle = diff3
+[rebase]
+	autoSquash = true
+	missingCommitsCheck = error
