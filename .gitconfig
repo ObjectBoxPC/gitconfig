@@ -79,6 +79,7 @@
 		rsh = reset --hard
 		rss = reset --soft
 [rebase]
+	autoSquash = true
 	missingCommitsCheck = error
 [merge]
 	conflictStyle = diff3
