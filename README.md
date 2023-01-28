@@ -8,7 +8,7 @@ The remaining configuration establishes a useful baseline of common options, whi
 
 ## Usage
 
-Add the contents of this file to your user configuration file, located at `~/.gitconfig` (Unix-like systems, including Linux and macOS/OS X) or `%USERHOME%\.gitconfig` (Windows). Check for any duplicate settings and adjust as desired.
+Add the contents of the `.gitconfig` file here to your user configuration file, located at `~/.gitconfig` (Unix-like systems, including Linux and macOS/OS X) or `%USERHOME%\.gitconfig` (Windows). Check for any duplicate settings and adjust as desired.
 
 ## License
 
