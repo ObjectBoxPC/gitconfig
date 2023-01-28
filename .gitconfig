@@ -52,6 +52,7 @@
 		pin = cherry-pick -n
 
 	pl = pull
+		plr = pull --rebase
 
 	ps = push
 		psd = push -d
