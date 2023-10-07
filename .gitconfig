@@ -59,7 +59,7 @@
 	s = status
 		ss = status -s #Short format, machine-readable
 
-	sct = !~/Documents/git-sct.sh #See https://gist.github.com/ObjectBoxPC/7c70e7657b42c542f0ba2cdf9145172b ; adjust path as needed
+	sct = !sh -c 'git difftool "$0^${1:-1}" "$0"' #Show commit diff using difftool (optional second argument to select parent number for merges)
 
 	t = stash push -m #Not bare "stash" to enforce always adding a message (plus avoids a conflict with "stash pop")
 		td = stash drop
